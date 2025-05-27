@@ -726,8 +726,8 @@ footer {
     padding: 30px 25px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 .articles-grid {
   display: grid;
@@ -752,7 +752,7 @@ footer {
 }
 
 .article-image {
-    width: 100%;
+    width: auto;
     height: auto;
     border-radius: 8px;
     margin-bottom: 25px;
@@ -800,9 +800,12 @@ a {
 
 .profile-section {
   padding: 60px 0 40px;
+  background-color:  #fafafaf4;
+}
+.profile-section1 {
+  padding: 60px 0 40px;
   background-color:  #f1f8e9;
 }
-
 .two-column {
   display: flex;
   flex-wrap: wrap;
