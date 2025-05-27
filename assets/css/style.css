@@ -431,7 +431,7 @@ header .container {
 
 /* ============== KONTAK ============== */
 .contact-section {
-    background-color: #fff;
+    background-color: #f1f8e9;
 }
 
 .contact-container {
@@ -454,7 +454,7 @@ header .container {
 
 .contact-info {
     padding: 30px;
-    background-color: #e8f5e9;
+    background-color: #f9f9f9;
     border-radius: 10px;
 }
 
@@ -787,7 +787,7 @@ a {
 
 .profile-section {
   padding: 60px 0 40px;
-  background-color: #f9f9f9;
+  background-color:  #f1f8e9;
 }
 
 .two-column {
