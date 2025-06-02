@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -30,7 +31,7 @@ img {
     display: block;
 }
 section {
-    padding: 50px 0;
+    padding: 80px 0;
 }
 .section-title {
     text-align: center;
@@ -1211,6 +1212,9 @@ nav ul li.has-dropdown:hover > a i {
   min-height: 100vh;
   font-family: Arial, sans-serif;
   gap: 0px;
+  margin-top: 50px;
+  font-size: 18px;
+  text-align: justify;
 }
 .sensortanah {
   flex: 1;
@@ -1220,9 +1224,28 @@ nav ul li.has-dropdown:hover > a i {
   align-items: center;
   min-height: 100vh;
   align-self: stretch;
-  padding: 20px 100px;
-  margin-top: 18%;
+  padding: 40px 100px;
+  text-align: justify;
 }
+
+.sensortanah h1,
+.sensortanah h2,
+.sensortanah h3,
+.sensortanah h4 {
+  font-size: 30px;
+  color: #003f2d;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  margin: 20px 0px;
+}
+
+.sensortanah p {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
 
 .kesimpulan {
   flex: 1;
@@ -1238,7 +1261,7 @@ nav ul li.has-dropdown:hover > a i {
   font-size: 18px ;
 }
 .kesimpulan h2 {
-  font-size: 40px ;
+  font-size: 30px ;
 }
 
 .image-col1 img {
@@ -1268,29 +1291,22 @@ nav ul li.has-dropdown:hover > a i {
   line-height: 2.0;
 }
 
-.content-wrapper1 h1 {
-  font-size: 28px;
-  color: #003f2d;
-}
-.content-wrapper1 h2 {
-  font-size: 28px;
-  color: #003f2d;
-}
-.content-wrapper1 h3 {
-  font-size: 25px;
-  color: #003f2d;
-}
+.content-wrapper1 h1,
+.content-wrapper1 h2,
+.content-wrapper1 h3,
 .content-wrapper1 h4 {
-  font-size: 25px;
+  font-size: 30px;
   color: #003f2d;
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
+
+.content-wrapper1 p,
 .content-wrapper1 ul {
-  font-size: 20px;
-  color: #003f2d;
-}
-.content-wrapper1 p {
   font-size: 18px;
-  color: #003f2d;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 15px;
 }
 
 .article-image {
@@ -1300,7 +1316,7 @@ nav ul li.has-dropdown:hover > a i {
 }
 
 .content-wrapper1 p {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.7;
   margin-bottom: 20px;
   color: #444;
@@ -1320,11 +1336,11 @@ nav ul li.has-dropdown:hover > a i {
 }
 
 section.flex-section{
-  padding: 20px 50px;
+  padding: 10px 0px;
   text-align: justify;
 }
 section.flex-section1{
-  padding: 20px 50px;
+  padding: 20px 0px;
   text-align: justify;
 }
 
