@@ -1,0 +1,1302 @@
+/* ============== RESET DAN DASAR ============== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f1f1f1;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+a {
+    text-decoration: none;
+    color: #4CAF50; /* Digunakan secara umum, salah satunya di .read-more dan link footer */
+}
+
+ul {
+    list-style: none; /* Default, bisa di-override oleh .mission ul li::before atau .vision-mission ul */
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+section { /* Digunakan oleh banyak <section> sebagai dasar, padding bisa di-override */
+    padding: 80px 0;
+}
+.section-title { /* Digunakan di index.html (Layanan, Artikel, Kalkulator, Kontak) */
+    text-align: center;
+    margin-bottom: 40px;
+    color: #4CAF50; 
+    font-size: 2rem;
+    position: relative;
+}
+
+.section-title::after { /* Terkait dengan .section-title */
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #4CAF50; 
+    margin: 10px auto;
+}
+.section-description { /* Digunakan di index.html (Kalkulator) */
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============== HEADER & NAVIGASI ============== */
+/* Styles untuk .navbar ada di index.html */
+header .container { /* Kontainer dalam <header class="navbar"> dan <header class="navbar1"> */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px; /* Padding umum, .navbar1 .container menyesuaikan lagi */
+}
+/* ==== DEFAULT NAVBAR (Before Scroll) - Untuk index.html ==== */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: transparent; /* Ini akan diubah oleh JS menjadi .scrolled */
+  color: black;
+  transition: all 0.3s ease;
+  justify-content: center; /* Properti flex item, mungkin dimaksudkan untuk .container di dalamnya */
+}
+
+.navbar .logo i,
+.navbar .logo span { /* Logo di .navbar (index.html) */
+  color: #90ee90; 
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.navbar nav ul li a { /* Link navigasi di .navbar (index.html) */
+  color: rgb(14, 13, 13);
+  transition: color 0.3s;
+}
+
+/* Dropdown default di .navbar (index.html) */
+.navbar nav ul li .dropdown {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: rgb(250, 246, 246); /* Warna teks fallback jika tidak ada link */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar nav ul li .dropdown a { /* Link dalam dropdown di .navbar (index.html) */
+  color: black;
+}
+
+/* ==== SCROLLED NAVBAR - Untuk index.html (ditambah oleh JS) ==== */
+.navbar.scrolled {
+  background-color: #00695c; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.scrolled nav ul li a { /* Link navigasi di .navbar.scrolled (index.html) */
+  color: white;
+}
+
+.navbar.scrolled .logo i,
+.navbar.scrolled .logo span { /* Logo di .navbar.scrolled (index.html) */
+  color: #90ee90; 
+}
+
+/* Dropdown ketika .navbar.scrolled (index.html) */
+.navbar.scrolled nav ul li .dropdown {
+  background-color: white;
+}
+
+.navbar.scrolled nav ul li .dropdown a {
+  color: #2e7d32;
+}
+
+/* Logo umum (digunakan oleh .navbar dan .navbar1) */
+.logo span { 
+  color: #7cd66b; 
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4CAF50; 
+}
+.logo i {
+    margin-right: 5px;
+    font-size: 1.2rem;
+}
+.menu-toggle { /* Tombol hamburger, display diubah di media query */
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar { /* Bagian dari .menu-toggle */
+    width: 25px;
+    height: 3px;
+    background-color: #4CAF50;;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+/* Video Slider Styling - Untuk index.html */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ============== BAGIAN PROFIL (Digunakan di profil-kami.html dan sebagian di index.html) ============== */
+/* .profile-section digunakan di profil-kami.html */
+.profile-section { 
+    background-color: #f1f8e9; /* Warna dasar untuk profil di profil-kami.html */
+    /* padding: 60px 0 40px; Ada definisi lain di bawah, ini mungkin ter-override atau menjadi dasar */
+}
+
+/* .profile-section .container hanya mengatur padding-top, bisa jadi lebih spesifik jika diperlukan */
+.profile-section .container { 
+    padding-top: 30px;
+}
+
+/* .two-column digunakan di index.html (profil) dan profil-kami.html */
+.two-column {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    /* flex-wrap: wrap; ada di definisi bawah, yang akan lebih spesifik */
+}
+
+/* .column digunakan di index.html (profil) dan profil-kami.html */
+.column {
+    flex: 1;
+}
+
+/* .image-column img digunakan di index.html (profil) */
+.image-column img {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* .text-column h2 digunakan di index.html (profil) dan profil-kami.html */
+.text-column h2 {
+    color: #4CAF50; 
+    margin-bottom: 20px;
+    /* font-size: 2rem; ada di definisi bawah, yang akan lebih spesifik */
+}
+
+/* .highlight digunakan di index.html (profil) dan profil-kami.html */
+.highlight {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #388E3C; 
+    border-left: 3px solid #4CAF50; 
+    padding-left: 15px;
+    margin-bottom: 25px;
+    /* color: #555; ada di definisi bawah, yang akan lebih spesifik */
+}
+
+/* .vision-mission dan turunannya digunakan di index.html (profil) dan profil-kami.html */
+.vision-mission {
+    display: grid;
+    gap: 20px;
+}
+
+.vision h3, .mission h3 {
+    color: #4CAF50; 
+    margin-bottom: 10px;
+    /* color: #2d5016; ada di definisi bawah, yang akan lebih spesifik */
+}
+
+.mission ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+
+.mission ul li::before { /* Bullet custom untuk misi */
+    content: "•";
+    color: #2e7d32;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* ============== LAYANAN (Digunakan di index.html) ============== */
+.services-section {
+    background-color: #fff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.service-card h3 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+/* ============== ARTIKEL (Untuk card di index.html) ============== */
+.articles-section {
+    background-color: #f1f8e9;
+}
+
+.articles-grid { /* Definisi pertama, digunakan di index.html. Definisi kedua identik dan bisa dihapus */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.article-card { /* Card artikel di index.html */
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.article-content { /* Konten dalam .article-card di index.html */
+    padding: 20px;
+}
+
+.read-more { /* Tombol "Baca Selengkapnya" di index.html */
+    display: inline-block;
+    color: #2e7d32;
+    font-weight: 500;
+    position: relative;
+    transition: padding 0.3s;
+}
+
+.read-more::after {
+    content: "→";
+    margin-left: 5px;
+    transition: margin 0.3s;
+}
+
+.read-more:hover {
+    padding-right: 5px;
+}
+
+.read-more:hover::after {
+    margin-left: 10px;
+}
+
+ /*============== KALKULATOR TEKNOLOGI (Digunakan di index.html) ==============*/ 
+ .tech-calculator {
+    background-color: #fff;
+}
+
+.calculator-form {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #2e7d32;
+}
+
+.form-group input, .form-group select, .form-group textarea { /* Berlaku untuk kalkulator dan form kontak/modal */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #2e7d32;
+    outline: none;
+}
+
+.calculate-btn, .submit-btn { /* .calculate-btn di kalkulator, .submit-btn di kontak & modal */
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    display: block;
+    width: 100%;
+}
+
+.calculate-btn:hover, .submit-btn:hover {
+    background-color: #1b5e20;
+}
+
+.calculation-result { /* Untuk hasil kalkulator di index.html */
+    background-color: #e8f5e9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    display: none; /* Diubah oleh JS */
+}
+
+.calculation-result h3 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+#result-content { /* ID untuk konten hasil kalkulator */
+    line-height: 1.8;
+} 
+
+/* ============== KONTAK (Digunakan di index.html) ============== */
+.contact-section {
+    background-color: #f1f8e9;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.contact-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form h3, .contact-info h3 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-item i {
+    color: #2e7d32;
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.social-media {
+    margin-top: 30px;
+    display: flex;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #2e7d32;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+/* Y (Typo) .social-icon:hover { ... } */
+.social-icon:hover { /* Perbaikan typo */
+    background-color: #1b5e20;
+    transform: scale(1.1);
+}
+
+/* ============== FOOTER (Digunakan di semua halaman) ============== */
+footer {
+    background-color: #00695c;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.footer-logo i {
+    margin-right: 5px;
+}
+
+.footer-links h3, .footer-contact h3, .footer-feedback h3 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #c8e6c9;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: white;
+}
+
+.footer-contact p {
+    margin-bottom: 5px;
+    color: #c8e6c9;
+}
+
+.feedback-btn { /* Tombol di footer */
+    background-color: white;
+    color: #1b5e20;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.feedback-btn:hover {
+    background-color: #e8f5e9;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #2e7d32;
+    font-size: 0.9rem;
+    color: #c8e6c9;
+}
+
+/* ============== MODAL (Digunakan oleh JS, dipicu dari footer) ============== */
+.modal {
+    display: none; /* Diubah oleh JS */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1050;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-modal { /* Tombol close di modal */
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal h3 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+/* ============== TOOLTIP (Digunakan oleh JS) ============== */
+.tooltip {
+    position: absolute;
+    background-color: rgba(46, 125, 50, 0.9);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 100; /* Z-index lebih rendah dari modal */
+    font-size: 0.9rem;
+    max-width: 250px;
+    display: none; /* Diubah oleh JS */
+    pointer-events: none;
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgba(46, 125, 50, 0.9) transparent;
+}
+
+/* ============== RESPONSIF ============== */
+@media (max-width: 992px) {
+    .two-column { /* Untuk .profile-section dan .profile-section1 */
+        flex-direction: column;
+    }
+    
+    .contact-container { /* Untuk bagian kontak */
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { /* Tampilkan hamburger menu */
+        display: flex;
+    }
+    
+    /* Navigasi mobile */
+  nav { /* Berlaku untuk .navbar nav dan .navbar1 nav */
+    display: none; /* Sembunyikan nav utama */
+    flex-direction: column;
+    background-color: #00695c; 
+    position: absolute;
+    top: 100%; /* Posisi di bawah header, perlu disesuaikan dengan tinggi header (misal 60px) */
+    /* top: 60px; /* Jika tinggi header tetap */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  nav.active { /* Ditambah oleh JS untuk menampilkan menu mobile */
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li a { /* Link menu mobile umum */
+    color: #a5d6a7; 
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a:hover {
+    background-color: #004d40;
+    color: #ffffff;
+  }
+
+    section { /* Padding umum section di mobile */
+        padding: 40px 0; /* Padding atas/bawah dikurangi */
+    }
+    
+    .services-grid, .articles-grid { /* Grid layanan dan artikel menjadi 1 kolom */
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo span { /* Ukuran font logo span lebih kecil */
+        font-size: 1.2rem;
+    }
+    
+    .hero { /* Tinggi hero section dikurangi */
+        height: 400px;
+    }
+    
+    .section-title { /* Ukuran font section title lebih kecil */
+        font-size: 1.8rem;
+    }
+}
+
+/* Perbaikan Ukuran Gambar untuk .article-card di index.html */
+.article-card .article-image { /* Ini menargetkan img.article-image di dalam .article-card */
+  width: 100%;
+  height: 200px; 
+  object-fit: cover;
+  display: block; /* display:block sudah ada di img general */
+}
+
+/* Untuk halaman detail artikel yang menggunakan <article class="article-detail"> */
+/* artikel-irigasi.html, artikel-iot.html, artikel-pertanian-presisi.html */
+.article-detail h1 {
+    font-size: 2.5rem;
+    color: #2c6f2c;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.article-image { /* Kelas ini digunakan oleh <img> di halaman detail dan juga di card index.html */
+    /* width: auto; height: auto; ini default, bisa dihapus jika tidak ada efek khusus */
+    border-radius: 8px; /* Radius untuk gambar di detail artikel */
+    margin-bottom: 25px; /* Jarak bawah gambar di detail */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Bayangan untuk gambar di detail */
+    /* max-width: 100% sudah ada di img general */
+}
+
+.article-detail p {
+    font-size: 1.125rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Responsif untuk .article-detail */
+@media (max-width: 768px) {
+    body { /* Padding body ini mungkin terlalu general dan bisa mempengaruhi halaman lain */
+        /* padding: 15px; /* Sebaiknya diatur per section jika perlu */
+    }
+
+    .article-detail { /* Padding untuk konten artikel detail di mobile */
+        padding: 20px 15px;
+    }
+
+    .article-detail h1 {
+        font-size: 2rem;
+    }
+
+    .article-detail p {
+        font-size: 1rem;
+    }
+}
+
+/* ========== PROFIL KAMI (profil-kami.html) ========== */
+/* .profile-section sudah ada di atas, ini lebih spesifik */
+.profile-section { /* Digunakan oleh profil-kami.html */
+  padding: 60px 0 40px; /* Padding spesifik, akan override padding section umum */
+  background-color:  #fafafaf4; /* Warna latar profil-kami.html */
+}
+.profile-section1 { /* Digunakan oleh index.html untuk bagian profil */
+  padding: 60px 0 40px; /* Umumnya sama dengan .profile-section */
+  background-color:  #f1f8e9; /* Warna latar beda untuk index.html */
+}
+/* .two-column sudah ada di atas, ini lebih spesifik */
+.two-column { /* Untuk index.html dan profil-kami.html */
+  display: flex;
+  flex-wrap: wrap; /* Penting untuk responsif */
+  gap: 40px;
+  align-items: center;
+}
+
+.image-column, /* Untuk .profile-section & .profile-section1 */
+.text-column {
+  flex: 1 1 45%; /* Basis flex dan bisa menyusut/bertambah */
+}
+
+.text-column h2 { /* Untuk .profile-section & .profile-section1 */
+  color: #2d5016; /* Warna beda dari .text-column h2 sebelumnya */
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.highlight { /* Untuk .profile-section & .profile-section1 */
+  font-size: 1.1rem; /* Sama seperti sebelumnya */
+  color: #555; /* Warna beda dari .highlight sebelumnya */
+  margin-bottom: 30px;
+  line-height: 1.6;
+  /* border-left dan padding-left tidak ada di sini, akan mengambil dari definisi .highlight sebelumnya jika ini tidak lebih spesifik */
+}
+
+.vision-mission h3 { /* Untuk .profile-section & .profile-section1 */
+  color: #2d5016; /* Warna beda */
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.vision-mission p, /* Untuk .profile-section & .profile-section1 */
+.vision-mission li {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.vision-mission ul { /* Untuk .profile-section & .profile-section1 */
+  padding-left: 20px; /* Menghilangkan bullet custom jika .mission ul li::before tidak dihapus */
+  list-style: disc; /* Menggunakan bullet standar */
+}
+
+.content-section { /* Digunakan di profil-kami.html untuk Perjalanan & Tim */
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  margin-top: 50px;
+}
+
+.content-section h3 { /* Judul dalam .content-section */
+  color: #2d5016;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-align: center;   
+}
+
+/* Timeline (di profil-kami.html) */
+.timeline {
+  position: relative;
+  padding-left: 30px; /* Ruang untuk garis dan titik */
+  margin-top: 20px;
+}
+
+.timeline::before { /* Garis vertikal timeline */
+  content: '';
+  position: absolute;
+  left: 15px; 
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #52b788;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 25px;
+  padding-left: 25px; /* Jarak dari titik timeline */
+}
+
+.timeline-item::before { /* Titik pada timeline */
+  content: '';
+  position: absolute;
+  left: -9px; /* Posisi titik agar pas di garis */
+  top: 5px; /* Penyesuaian vertikal titik */
+  width: 12px;
+  height: 12px;
+  background: #52b788;
+  border-radius: 50%;
+  border: 3px solid white; /* Efek outline putih */
+}
+
+.timeline-year {
+  font-weight: 600;
+  color: #52b788;
+  margin-bottom: 5px;
+}
+
+.timeline-desc {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.team-grid { /* Grid untuk tim di profil-kami.html */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Kartu tim responsif */
+  gap: 20px;
+}
+
+.team-card { /* Kartu anggota tim */
+    background: #ffffff;
+    text-align: center;
+    padding: 25px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-avatar { /* Kontainer avatar, bukan img langsung */
+  width: 100px; /* Lebar kontainer avatar */
+  height: 50px; /* Tinggi kontainer, mungkin ingin sama dengan width agar bulat sempurna jika img adalah background */
+  /* Jika .team-avatar img memiliki style sendiri, ini mungkin hanya untuk fallback atau spacing */
+  background: #52b788; /* Warna latar jika tidak ada gambar */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px; /* Jarak bawah avatar */
+  color: white; /* Warna teks jika tidak ada img (misal inisial) */
+  font-size: 1.5rem;
+}
+
+.team-name {
+  font-weight: 600;
+  color: #2d5016;
+  margin-bottom: 5px;
+}
+
+.team-role {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.team-desc {
+  color: #777;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Back Button (Styling kedua, yang ini lebih spesifik untuk profil-kami.html jika tidak di-override) */
+/* Ada definisi .back-button lain di bawah (Flex Section), yang mungkin lebih global */
+.back-button { 
+  display: inline-block; /* Agar bisa diatur margin auto jika parent text-align center */
+  margin: 40px auto; /* Ini akan center jika parent adalah block dan text-align center */
+  text-align: center; /* Untuk teks di dalam tombol jika tombolnya block */
+  color: #2d5016;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #52b788;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.back-button i { /* Ikon di dalam tombol kembali */
+  margin-right: 8px;
+}
+
+.back-button:hover {
+  background-color: #52b788;
+  color: white;
+  border-color: #52b788;
+}
+
+/* ============== HEADER & NAVIGASI PROFIL (dan halaman artikel) ============== */
+/* .navbar1 digunakan di profil-kami.html dan semua halaman artikel */
+.navbar1 {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #00695c; 
+  justify-content: center; /* Untuk flex container, .navbar1 adalah block */
+  /* box-shadow ditambahkan di CSS yang saya berikan sebelumnya, bisa ditambahkan di sini */
+}
+
+/* Warna tulisan menu navigasi utama di .navbar1 */
+.navbar1 nav ul li a { /* Ini sudah ada di definisi nav ul li a umum jika warnanya sama */
+  color: white; /* Eksplisit putih untuk .navbar1 */
+}
+
+nav ul { /* Styling umum untuk <ul> dalam <nav> */
+    display: flex;
+}
+
+nav ul li { /* Styling umum untuk <li> dalam <nav> */
+    margin-left: 5px; /* Disesuaikan dari 20px di CSS lama */
+    position: relative;
+}
+
+nav ul li a { /* Styling umum untuk <a> dalam <nav> */
+    font-weight: 500;
+    padding: 10px 15px; /* Padding untuk link navigasi */
+    color: #fafbfa; /* Warna default link navigasi (hampir putih) */
+    transition: background-color 0.2s, color 0.2s, border-bottom 0.2s; /* Ditambah transisi border */
+    border-radius: 6px;
+}
+
+nav ul li a:hover { /* Hover umum link navigasi */
+    color: #7cd66b; /* Warna hijau muda saat hover */
+    border-bottom: 2px solid #7cd66b; /* Border bawah saat hover */
+}
+
+/* Dropdown yang lebih umum, berlaku untuk .navbar dan .navbar1 */
+nav ul li ul.dropdown { 
+  position: absolute;
+  top: 100%; /* Posisi dropdown di bawah item li parent */
+  left: 0;
+  background-color: white;
+  padding: 8px 0;
+  display: none; /* Sembunyi secara default */
+  min-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+  z-index: 999; /* Pastikan dropdown di atas konten lain */
+}
+
+nav ul li:hover ul.dropdown { /* Tampilkan dropdown saat hover di li parent */
+  display: block;
+}
+
+nav ul li ul.dropdown li { /* Item dalam dropdown */
+  width: 100%;
+}
+
+nav ul li ul.dropdown li a { /* Link dalam dropdown */
+  display: block;
+  padding: 10px 20px;
+  color: #2e7d32; /* Warna teks link dropdown */
+  font-weight: 500;
+  transition: background-color 0.2s, padding-left 0.2s;
+  border-bottom: none !important; /* Hapus border bawah dari nav ul li a:hover */
+}
+
+nav ul li ul.dropdown li a:hover { /* Hover link dalam dropdown */
+  background-color: #e8f5e9;
+  padding-left: 25px; /* Efek indent saat hover */
+  color: #00695c; /* Warna teks berubah saat hover */
+}
+
+/* Panah Dropdown */
+nav ul li.has-dropdown > a i { /* Ikon panah pada item dropdown */
+    margin-left: 5px;
+    font-size: 0.75rem;
+    transition: transform 0.3s;
+}
+
+/* Rotate arrow on hover (optional) */
+nav ul li.has-dropdown:hover > a i { /* Rotasi panah saat hover */
+    transform: rotate(180deg);
+}
+
+.team-avatar img { /* Gambar avatar tim di profil-kami.html */
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px; /* Dihapus margin auto dari .team-avatar jika ini yang utama */
+  border: 4px solid #4CAF50; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Flex Section for Artikel Smart Farming (artikel-smart-farming.html, artikel-drone.html) */
+/* Beberapa artikel menggunakan ini, yang lain .article-detail atau .flex-section1 */
+.flex-section-smart-farming-1 { /* Digunakan di artikel-smart-farming.html */
+  display: flex;
+  flex-wrap: wrap; /* Agar kolom bisa stack di mobile */
+  min-height: 50vh; /* Mungkin terlalu tinggi untuk beberapa artikel, bisa disesuaikan per halaman jika perlu */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Font beda dari body */
+  gap: 0; /* Tidak ada jarak antar kolom secara default */
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); /* Latar belakang gradien */
+  padding: 35px 0 20px 0; /* Padding atas untuk fixed navbar, padding bawah */
+  text-align: justify; /* text-align ini mungkin lebih cocok di .content-col p */
+}
+
+.flex-section-smart-farming-2 { /* Digunakan di artikel-smart-farming.html */
+  display: flex;
+  flex-wrap: wrap; /* Agar kolom bisa stack di mobile */
+  min-height: 50vh; /* Mungkin terlalu tinggi untuk beberapa artikel, bisa disesuaikan per halaman jika perlu */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Font beda dari body */
+  gap: 0; /* Tidak ada jarak antar kolom secara default */
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); /* Latar belakang gradien */
+  padding: 0 0px 0 0px; /* Padding atas untuk fixed navbar, padding bawah */
+  text-align: justify; /* text-align ini mungkin lebih cocok di .content-col p */
+}
+
+.flex-section {
+  display: flex;
+  flex-wrap: wrap; /* Agar kolom bisa stack di mobile */
+  min-height: 50vh; /* Mungkin terlalu tinggi untuk beberapa artikel, bisa disesuaikan per halaman jika perlu */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Font beda dari body */
+  gap: 0; /* Tidak ada jarak antar kolom secara default */
+  /* background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); Latar belakang gradien */
+  background: #f8fafc; /* Latar belakang solid, bisa diubah sesuai kebutuhan */
+  padding: 0 0px 0 0px; /* Padding atas untuk fixed navbar, padding bawah */
+  text-align: justify; /* text-align ini mungkin lebih cocok di .content-col p */
+}
+
+.image-col { /* Kolom gambar dalam .flex-section */
+  flex: 1; /* Ambil setengah ruang jika ada .content-col */
+  min-width: 250px; /* Lebar minimum sebelum wrap */
+  position: relative; /* Untuk .overlay-text */
+  display: flex;
+  padding: 25px; /* Padding dalam kolom gambar */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Sama dengan .flex-section, mungkin berlebihan */
+  background: #ffffff; /* Latar belakang kolom gambar */
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.02); /* Bayangan halus */
+}
+
+.image-col img { /* Gambar dalam .image-col */
+  width: 85%; /* Ukuran gambar relatif terhadap .image-col */
+  height: 85%;
+  max-height: 90vh; /* Batas tinggi gambar */
+  object-fit: cover; /* Gambar mengisi area tanpa distorsi */
+  border-radius: 20px; /* Sudut membulat */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); /* Bayangan gambar */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-col img:hover {
+  transform: scale(1.02); /* Efek zoom saat hover */
+}
+
+.overlay-text { /* Teks overlay di atas gambar (artikel-smart-farming.html) */
+  position: absolute;
+  font-size: clamp(60px, 8vw, 90px); /* Ukuran font responsif */
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+  font-family: 'Inter', sans-serif; /* Font spesifik */
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px); /* Efek blur di belakang teks */
+  padding: 20px 30px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1); /* Latar transparan */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.content-col { /* Kolom konten dalam .flex-section */
+  flex: 1; /* Ambil setengah ruang */
+  background: #ffffff; /* Latar belakang kolom konten */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 75px; /* Padding besar */
+  min-height: 100vh; /* Sama dengan .flex-section, mungkin berlebihan */
+}
+
+.content-wrapper { /* Pembungkus konten dalam .content-col */
+  max-width: 600px; /* Batas lebar teks */
+}
+
+.content-wrapper h2 { /* Judul dalam .content-wrapper */
+  font-size: clamp(32px, 4vw, 42px); /* Ukuran font responsif */
+  color: #0f172a; /* Warna teks gelap */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 32px;
+  letter-spacing: -0.025em;
+}
+
+/* .article-image sudah ada definisi umumnya. Ini lebih spesifik untuk .flex-section */
+.article-image { /* Gambar artikel jika ada di dalam .flex-section .content-wrapper */
+  width: 100%;
+  border-radius: 16px; /* Radius beda dari .article-image umum */
+  margin-bottom: 24px; /* Jarak beda */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); /* Bayangan beda */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.content-wrapper p { /* Paragraf dalam .content-wrapper */
+  font-size: 18px;
+  line-height: 1.75;
+  margin-bottom: 24px;
+  color: #475569; /* Warna teks beda */
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Back Button (Styling ketiga, yang ini sangat spesifik untuk .flex-section) */
+/* Akan override .back-button sebelumnya jika selector ini lebih spesifik atau muncul setelahnya */
+.back-button { 
+  display: inline-flex; /* Untuk alignment ikon dan teks */
+  align-items: center;
+  margin-top: 32px;
+  padding: 12px 24px;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%); /* Latar gradien */
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px; /* Ukuran font beda */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+  border: none; /* Hapus border default */
+}
+
+.back-button:hover { /* Hover untuk .back-button spesifik ini */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.back-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design untuk .flex-section */
+@media (max-width: 768px) {
+  .flex-section { /* Kolom stack di mobile */
+    flex-direction: column;
+  }
+  
+  .image-col,
+  .content-col { /* Kolom jadi full width dan tinggi disesuaikan */
+    min-width: 100%;
+    min-height: 50vh; /* Tinggi dikurangi untuk mobile */
+  }
+  
+  .content-col { /* Padding .content-col di mobile */
+    padding: 40px 30px;
+  }
+  
+  .overlay-text { /* Ukuran .overlay-text di mobile */
+    font-size: clamp(40px, 10vw, 60px);
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-col { /* Padding .content-col di layar sangat kecil */
+    padding: 30px 20px;
+  }
+  
+  .content-wrapper p { /* Font paragraf di layar sangat kecil */
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+
+/* Artikel Sensor Tanah 2 Flex (artikel-sensor-tanah.html) */
+.flex-section1 { /* Digunakan oleh artikel-sensor-tanah.html */
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh; /* Mirip .flex-section */
+  font-family: Arial, sans-serif; /* Font beda lagi */
+  gap: 20px; /* Jarak antar kolom */
+  margin-top: 40px; /* Jarak atas section */
+  font-size: 18px; /* Font dasar section */
+  text-align: justify; /* Teks rata kiri-kanan untuk semua di dalam section ini */
+  padding: 100px 0 20px 0; /* Padding atas untuk navbar fixed, padding bawah */
+}
+.sensortanah { /* Kolom di artikel-sensor-tanah.html */
+  flex: 1;
+  min-width: 400px; /* Lebar minimum sebelum wrap */
+  position: relative; /* Untuk elemen absolut di dalamnya jika ada */
+  padding: 40px 100px; /* Padding besar */
+}
+
+.sensortanah h1,
+.sensortanah h2,
+.sensortanah h3,
+.sensortanah h4 { /* Judul dalam .sensortanah */
+  font-size: 30px; /* Ukuran font besar */
+  color: #003f2d; /* Warna hijau sangat tua */
+  margin-bottom: 12px;
+  line-height: 1.4;
+  margin: 20px 0px; /* Margin atas-bawah */
+}
+
+.sensortanah p { /* Paragraf dalam .sensortanah */
+  font-size: 18px; /* Sama dengan font-size .flex-section1 */
+  color: #444; /* Warna abu tua */
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.kesimpulan { /* Bagian kesimpulan di artikel-sensor-tanah.html */
+  flex: 1;
+  min-width: 400px;
+  position: relative;
+  /* justify-content, align-items, align-self seperti .sensortanah */
+  padding: 20px 100px; /* Padding beda dari .sensortanah */
+}
+.kesimpulan p {
+  font-size: 18px ; /* Sama dengan .sensortanah p */
+}
+.kesimpulan h2 {
+  font-size: 30px ; /* Sama dengan .sensortanah hN */
+}
+
+.content-col1 { /* Kolom lain di artikel-sensor-tanah.html */
+  flex: 1;
+  background-color: #FBFDFB; /* Latar beda */
+  display: flex; /* Untuk .content-wrapper1 di tengah */
+  justify-content: center;
+  align-items: center;
+  padding: 50px 100px;
+  min-height: 100vh;
+  /* align-self: stretch; */
+  line-height: 2.0; /* Line height besar untuk semua di sini */
+}
+
+.content-wrapper1 h1, /* Mirip .content-wrapper, tapi untuk .content-col1 */
+.content-wrapper1 h2,
+.content-wrapper1 h3,
+.content-wrapper1 h4 {
+  font-size: 30px;
+  color: #003f2d;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.content-wrapper1 p,
+.content-wrapper1 ul {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.7; /* Override line-height dari .content-col1 */
+  margin-bottom: 15px;
+}
