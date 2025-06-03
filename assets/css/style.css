@@ -8,7 +8,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #2F5D62;
     background-color: #f1f1f1;
 }
 .container {
@@ -415,7 +415,7 @@ header .container { /* Kontainer dalam <header class="navbar"> dan <header class
 }
 
 .calculation-result { /* Untuk hasil kalkulator di index.html */
-    background-color: #2F5D62;
+    background-color: #A7C4BC;
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
@@ -425,7 +425,7 @@ header .container { /* Kontainer dalam <header class="navbar"> dan <header class
 }
 
 .calculation-result h3 {
-    color: #2F5D62;
+    color: #5E8B7E;
     margin-bottom: 15px;
 }
 
@@ -601,7 +601,7 @@ footer {
 }
 
 .modal h3 {
-    color: #2e7d32;
+    color: #2F5D62;
     margin-bottom: 20px;
 }
 
@@ -721,12 +721,11 @@ footer {
     font-weight: 700;
 }
 
-.article-image { /* Kelas ini digunakan oleh <img> di halaman detail dan juga di card index.html */
-    /* width: auto; height: auto; ini default, bisa dihapus jika tidak ada efek khusus */
-    border-radius: 8px; /* Radius untuk gambar di detail artikel */
-    margin-bottom: 25px; /* Jarak bawah gambar di detail */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Bayangan untuk gambar di detail */
-    /* max-width: 100% sudah ada di img general */
+.article-image {
+  border-radius: 20px; /* Radius untuk gambar di detail artikel */
+  margin-bottom: 25px; /* Jarak bawah gambar di detail */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Bayangan untuk gambar di detail */
+  /* max-width: 100% sudah ada di img general */
 }
 
 .article-detail p {
@@ -878,13 +877,13 @@ footer {
   gap: 20px;
 }
 
-.team-card { /* Kartu anggota tim */
-    background: #ffffff;
-    text-align: center;
-    padding: 25px 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
+.team-card {
+  background: #ffffff;
+  text-align: center;
+  padding: 25px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .team-avatar { /* Kontainer avatar, bukan img langsung */
@@ -925,11 +924,11 @@ footer {
   display: inline-block; /* Agar bisa diatur margin auto jika parent text-align center */
   margin: 40px auto; /* Ini akan center jika parent adalah block dan text-align center */
   text-align: center; /* Untuk teks di dalam tombol jika tombolnya block */
-  color: #2d5016;
+  color: #5E8B7E;
   font-weight: 500;
   text-decoration: none;
   padding: 10px 20px;
-  border: 1px solid #52b788;
+  border: 1px solid #A7C4BC;
   border-radius: 6px;
   transition: all 0.3s ease;
 }
@@ -939,9 +938,9 @@ footer {
 }
 
 .back-button:hover {
-  background-color: #52b788;
+  background-color: #5E8B7E;
   color: white;
-  border-color: #52b788;
+  border-color: #A7C4BC;
 }
 
 /* ============== HEADER & NAVIGASI PROFIL (dan halaman artikel) ============== */
@@ -1011,7 +1010,7 @@ nav ul li ul.dropdown li { /* Item dalam dropdown */
 nav ul li ul.dropdown li a { /* Link dalam dropdown */
   display: block;
   padding: 10px 20px;
-  color: #2e7d32; /* Warna teks link dropdown */
+  color: #2F5D62; /* Warna teks link dropdown */
   font-weight: 500;
   transition: background-color 0.2s, padding-left 0.2s;
   border-bottom: none !important; /* Hapus border bawah dari nav ul li a:hover */
@@ -1094,9 +1093,9 @@ nav ul li.has-dropdown:hover > a i { /* Rotasi panah saat hover */
 }
 
 .image-col img { /* Gambar dalam .image-col */
-  width: 85%; /* Ukuran gambar relatif terhadap .image-col */
-  height: 85%;
-  max-height: 90vh; /* Batas tinggi gambar */
+  width: 70%; /* Ukuran gambar relatif terhadap .image-col */
+  height: 70%;
+  max-height: 75vh; /* Batas tinggi gambar */
   object-fit: cover; /* Gambar mengisi area tanpa distorsi */
   border-radius: 20px; /* Sudut membulat */
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); /* Bayangan gambar */
@@ -1138,7 +1137,7 @@ nav ul li.has-dropdown:hover > a i { /* Rotasi panah saat hover */
 
 .content-wrapper h2 { /* Judul dalam .content-wrapper */
   font-size: clamp(32px, 4vw, 42px); /* Ukuran font responsif */
-  color: #0f172a; /* Warna teks gelap */
+  color: #2F5D62; /* Warna teks gelap */
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 32px;
@@ -1338,14 +1337,14 @@ nav ul li.has-dropdown:hover > a i { /* Rotasi panah saat hover */
 /* Judul utama */
 .content-wrapper2 h1 {
   font-size: 33px;
-  color: #75b32d;
+  color: #2F5D62;
   margin-bottom: 10px;
 }
 
 /* Subjudul */
 .content-wrapper2 h2 {
   font-size: 26px;
-  color: #333333;
+  color: #2F5D62;
   margin-top: 25px;
   margin-bottom: 10px;
 }
@@ -1387,7 +1386,7 @@ nav ul li.has-dropdown:hover > a i { /* Rotasi panah saat hover */
 /* Gambar artikel */
 .article-image {
   max-width: 100%;
-  border-radius: 5px;
+  border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -1412,7 +1411,7 @@ nav ul li.has-dropdown:hover > a i { /* Rotasi panah saat hover */
 
 .column-left h3,
 .column-right h3 {
-  color: #75b32d;
+  color: #2F5D62;
   font-size: 22px;
   margin-bottom: 10px;
 }

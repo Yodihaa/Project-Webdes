@@ -196,6 +196,32 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal Feedback -->
+    <div id="feedback-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Berikan Saran dan Masukan</h3>
+            <form id="feedback-form">
+                <div class="form-group">
+                    <label for="feedback-name">Nama:</label>
+                    <input type="text" id="feedback-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feedback-email">Email:</label>
+                    <input type="email" id="feedback-email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feedback-message">Saran/Masukan:</label>
+                    <textarea id="feedback-message" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit">Kirim</button>
+            </form>
+        </div>
+    </div>
 <script src="/assets/js/main.js" defer></script>
 
 </body>
