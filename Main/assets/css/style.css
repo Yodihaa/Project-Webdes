@@ -31,12 +31,12 @@ img {
     display: block;
 }
 section { /* Digunakan oleh banyak <section> sebagai dasar, padding bisa di-override */
-    padding: 80px 0;
+    padding: 85px 0;
 }
 .section-title { /* Digunakan di index.html (Layanan, Artikel, Kalkulator, Kontak) */
     text-align: center;
     margin-bottom: 40px;
-    color: #4CAF50; 
+    color: #2F5D62; 
     font-size: 2rem;
     position: relative;
 }
@@ -46,7 +46,7 @@ section { /* Digunakan oleh banyak <section> sebagai dasar, padding bisa di-over
     display: block;
     width: 50px;
     height: 3px;
-    background-color: #4CAF50; 
+    background-color: #2F5D62; 
     margin: 10px auto;
 }
 .section-description { /* Digunakan di index.html (Kalkulator) */
@@ -80,14 +80,18 @@ header .container { /* Kontainer dalam <header class="navbar"> dan <header class
 
 .navbar .logo i,
 .navbar .logo span { /* Logo di .navbar (index.html) */
-  color: #90ee90; 
+  color: #2F5D62; 
   font-weight: bold;
   font-size: 1.2em;
 }
 
-.navbar nav ul li a { /* Link navigasi di .navbar (index.html) */
-  color: rgb(14, 13, 13);
+.navbar nav ul li a {
+  /*Linknavigasidi.navbar(index.html)*/color: rgb(14, 13, 13);
   transition: color 0.3s;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  -o-transition: color 0.3s;
 }
 
 /* Dropdown default di .navbar (index.html) */
@@ -95,8 +99,7 @@ header .container { /* Kontainer dalam <header class="navbar"> dan <header class
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  color: rgb(250, 246, 246); /* Warna teks fallback jika tidak ada link */
-  transition: background-color 0.3s, color 0.3s;
+  color: rgb(250, 246, 246);
 }
 
 .navbar nav ul li .dropdown a { /* Link dalam dropdown di .navbar (index.html) */
@@ -105,7 +108,7 @@ header .container { /* Kontainer dalam <header class="navbar"> dan <header class
 
 /* ==== SCROLLED NAVBAR - Untuk index.html (ditambah oleh JS) ==== */
 .navbar.scrolled {
-  background-color: #00695c; 
+  background-color: #2F5D62; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -115,7 +118,7 @@ header .container { /* Kontainer dalam <header class="navbar"> dan <header class
 
 .navbar.scrolled .logo i,
 .navbar.scrolled .logo span { /* Logo di .navbar.scrolled (index.html) */
-  color: #90ee90; 
+  color: #5E8B7E; 
 }
 
 /* Dropdown ketika .navbar.scrolled (index.html) */
@@ -287,7 +290,7 @@ header .container { /* Kontainer dalam <header class="navbar"> dan <header class
     width: 60px;
     height: 60px;
     background-color: #e8f5e9;
-    color: #2e7d32;
+    color: #2F5D62;
     font-size: 1.5rem;
     border-radius: 50%;
     display: flex;
@@ -297,13 +300,13 @@ header .container { /* Kontainer dalam <header class="navbar"> dan <header class
 }
 
 .service-card h3 {
-    color: #2e7d32;
+    color: #2F5D62;
     margin-bottom: 15px;
 }
 
 /* ============== ARTIKEL (Untuk card di index.html) ============== */
 .articles-section {
-    background-color: #f1f8e9;
+    background-color: #DFEEEA;
 }
 
 .articles-grid { /* Definisi pertama, digunakan di index.html. Definisi kedua identik dan bisa dihapus */
@@ -330,7 +333,7 @@ header .container { /* Kontainer dalam <header class="navbar"> dan <header class
 
 .read-more { /* Tombol "Baca Selengkapnya" di index.html */
     display: inline-block;
-    color: #2e7d32;
+    color: #2F5D62;
     font-weight: 500;
     position: relative;
     transition: padding 0.3s;
@@ -390,7 +393,7 @@ header .container { /* Kontainer dalam <header class="navbar"> dan <header class
 }
 
 .calculate-btn, .submit-btn { /* .calculate-btn di kalkulator, .submit-btn di kontak & modal */
-    background-color: #2e7d32;
+    background-color: #5E8B7E;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -427,7 +430,7 @@ header .container { /* Kontainer dalam <header class="navbar"> dan <header class
 
 /* ============== KONTAK (Digunakan di index.html) ============== */
 .contact-section {
-    background-color: #f1f8e9;
+    background-color: #DFEEEA;
 }
 
 .contact-container {
@@ -492,7 +495,7 @@ header .container { /* Kontainer dalam <header class="navbar"> dan <header class
 
 /* ============== FOOTER (Digunakan di semua halaman) ============== */
 footer {
-    background-color: #00695c;
+    background-color: #2F5D62;
     color: white;
     padding: 50px 0 20px;
 }
@@ -753,8 +756,8 @@ footer {
   background-color:  #fafafaf4; /* Warna latar profil-kami.html */
 }
 .profile-section1 { /* Digunakan oleh index.html untuk bagian profil */
-  padding: 60px 0 40px; /* Umumnya sama dengan .profile-section */
-  background-color:  #f1f8e9; /* Warna latar beda untuk index.html */
+  padding: 85px 0 40px; /* Umumnya sama dengan .profile-section */
+  background-color:  #DFEEEA; /* Warna latar beda untuk index.html */
 }
 /* .two-column sudah ada di atas, ini lebih spesifik */
 .two-column { /* Untuk index.html dan profil-kami.html */
